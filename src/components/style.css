@@ -1,0 +1,199 @@
+/* Utility */
+.text-12-grey {
+    color: #212121;
+    font-size: 12;
+    font-style: italic;
+}
+
+header {
+    text-transform: uppercase;
+    color: darkcyan;
+    text-align: end;
+    height: min-content;
+    padding: 10px;
+}
+
+header a{
+    color: darkcyan;
+    border: #90CAF9;
+    padding: 5px 10px;
+    text-decoration:none;
+}
+
+header a:hover {
+   text-decoration: underline;
+   background-color: #90CAF9;
+   color: #FFFFFF;
+}
+
+header-2 {
+    color: rgb(12, 51, 51);
+    text-align: center;
+    height: min-content;
+}
+
+
+.weather-search {
+    display: flex;
+    flex-direction: column;
+    background-image: url('..//imgSvg/heroBg.png');
+    /* background-repeat: no-repeat; */
+    background-position: center;
+    width: 100%;
+    align-items: center;
+    height: 426px;
+    justify-content: center;
+
+}
+
+.search-field {
+    max-width: 600px;
+    height: 50px;
+    background: #FFFFFF;
+    border-radius: 30px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-field-input {
+    padding-left: 15px;
+    border-radius: 30px;
+    border:none;
+    height: 40px;
+    font-size: 16px;
+    line-height: 24px;
+    cursor: text;
+}
+
+.search-field-button {
+    background: #90CAF9;
+    background-image: url('..//imgSvg/Vector.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 30px;
+    border: 0;
+    width: 50px;
+    height: 50px;
+} 
+.news-info{
+    width: 550px;
+    height: 220px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 30px;
+    padding: 20px;
+    margin: 0;
+}
+
+.weather-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 550px;
+    height: 220px;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 30px;
+    padding: 20px;
+    align-items: center;
+
+}
+
+
+.weather-info-temp {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+
+}
+.weather-info-icon {
+    background: #FFFFFF;
+    border-radius: 30px;
+    height: 100px;
+    width: 100px;
+}
+.weather-icon-img {
+    width: 100px;
+    height: 100px;
+}
+
+.weather-info-temp-current {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: baseline;
+}
+
+.drizzle-type {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #212121;
+}
+
+.weather-info-location {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    font-size: 20px;
+}
+
+.popular-cities-section {
+    background-color: aliceblue;
+    padding: 20px;
+    text-align: center;
+}
+.popular-cities-section h2{
+    padding-bottom: 30px;
+}
+
+.popular-cities-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.popular-cities{
+    width: 220px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    }
+
+.NewYork {
+    background-image: url(../imgSvg/NewYork.png);
+}
+.London {
+    background-image: url(../imgSvg/London.png);
+}
+.Dubai {
+    background-image: url(../imgSvg/Dubai.png);
+}
+.Paris {
+    background-image: url(../imgSvg/Dubai.png);
+}
+
+
+.button-cities {
+    width: 80%;
+    padding: 5px;
+    border-radius: 30px;
+    border: 0;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+ .create-sign {
+align-self: end;
+padding-right: 10px;
+} 
+
+.footer {
+    text-align: center;
+    color: #212121;
+    font-size: 16px;
+}

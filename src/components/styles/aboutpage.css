@@ -1,0 +1,24 @@
+.portfolio-section {
+    display: grid;
+    margin: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+ .portfolio-item {
+     display: grid; 
+     min-height: 32vh;  /*высота портфолио занимает один экран */
+    background-size: cover; /* растянуть картинку на весь блок */ 
+    background-position: center; /* расположение картинки в центре блока */ 
+    text-align: center; /* горизонтальное выравнивание текста */ 
+    align-content: center; /* вертикальное выравнивание текста */
+ }
+
+  .portfolio-item:nth-child(1) {
+      grid-column: 1/3; /* 1-ый элемент занимает две горизонтальных ячейки */
+  }
+
+   .portfolio-item:nth-child(6) {
+       grid-column: 4;
+       grid-row: 2/4; /* 6-ый элемент занимает две вертикальные ячейки */
+   }
