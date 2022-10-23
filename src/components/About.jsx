@@ -1,6 +1,6 @@
 
 import "./styles/aboutpage.css";
-import MyFotos from "./BD/MyFotos.js"
+
 import "../components/style.css";
 
 function About() {
