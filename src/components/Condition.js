@@ -5,22 +5,22 @@ import { CiCloudMoon } from "react-icons/ci";
 
 function GetSvgCondition({ myCondition }) {
     let myConditional = myCondition;
-    let ConditionSVG = '';
+    let сonditionSVG = '';
     switch (true) {
         case (myConditional === 'Sunny' || myConditional === 'Clear'):
-            ConditionSVG = < BsSun />;
+            сonditionSVG = < BsSun />;
             break;
         case (myConditional === 'Partly cloudy' || myConditional === 'cloudy'):
-            ConditionSVG = < BsCloudSun />;
+            сonditionSVG = < BsCloudSun />;
             break;
         case (myConditional === 'Rain'):
-            ConditionSVG = < BsFillCloudHailFill />;
+            сonditionSVG = < BsFillCloudHailFill />;
             break;
         default:
-            ConditionSVG = < CiCloudMoon />;
+            сonditionSVG = < CiCloudMoon />;
             break;
     }
-    return ConditionSVG;
+    return сonditionSVG;
 }
 
 export default GetSvgCondition;

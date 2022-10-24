@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../components/style.css";
 import { WiHumidity } from "react-icons/wi";
 import { FaTemperatureLow } from "react-icons/fa";
 import GetSvgCondition from "./Condition";
 
-console.log('WeatherList here');
+
+
 function WeatherList() {
     const [humidity, setHumidity] = useState('');
     const [tepmerature, setTepmerature] = useState('');
@@ -15,10 +16,13 @@ function WeatherList() {
     const [WeatherIcon, setWeatherIcon] = useState('./imgSvg/imgage-1.png');
     const [error, setError] = useState(false);
 
-    const updateWeather = () => {
-        fetch('https://api.weatherapi.com/v1/current.json?key=237b94cd56344d69b80133558221510&q=' + inputLocationName + '+"&aqi=no')
+    useEffect(() => {
+      fetch('https://api.weatherapi.com/v1/current.json?key=237b94cd56344d69b80133558221510&q=' + inputLocationName + '+"&aqi=no')
             .then(el => el.json())
             .then(data => {
+                if(data.error) {
+console.log(data.error.message);
+                } else {
                 setInputLocationName(data.location.name);
                 setHumidity(data.current.humidity);
                 setTepmerature(data.current.temp_c);
@@ -27,20 +31,19 @@ function WeatherList() {
                 setLocationTime(data.location.localtime);
                 setWeatherIcon(data.current.condition.icon);
                 setError(false);
+                }
+            });
+}, [inputLocationName]);
 
-            })
-            .catch(error => setError(true));
-    };
-
-
+      
     return (
         <><section className="weather-search">
-            <div className="search-field">
-                <input className="search-field-input" name="search" type='text' value={inputLocationName} onChange={(event) => {
-                    setInputLocationName(event.target.value);
+            <form className="search-field">
+                <input className="search-field-input" name="search" type='text' value={inputLocationName} onChange={({target: {value}}) => {
+                    setInputLocationName(value);
                 }} />
-                <button className="search-field-button" type='button' onClick={updateWeather}></button>
-            </div>
+                {/* <button className="search-field-button" type='button' onClick={ setInputLocationName('Dublin')}></button> */}
+            </form>
             <div className="weather-info">
                 <div className="weather-info-temp">
                     {(error)
@@ -69,21 +72,24 @@ function WeatherList() {
             <p className="text-12-grey create-sign"> Create with love</p>
 
         </section>
-            <h2 className="header-2">Check the weather in most popular cities in the world</h2>
+            <h2 className="headerH2">Check the weather in most popular cities in the world</h2>
             <section className="popular-cities-section">
 
                 <div className="popular-cities-list">
-                    <div className="popular-cities NewYork">
-                        <button className="button-cities">New York</button>
+                    <div className="popular-cities London">
+                        <button className="button-cities" type='button' onClick={(event) => { setInputLocationName('London'); }}>London
+                        </button> 
                     </div>
                     <div className="popular-cities Paris">
                         <button className="button-cities" type='button' onClick={(event) => { setInputLocationName('Paris'); }}>Paris</button>   {/*key={Paris} onClick={() => updateWeather(Paris)} */}
                     </div>
-                    <div className="popular-cities London">
-                        <button className="button-cities">London</button>
+                    <div className="popular-cities Dublin">
+                        <button className="button-cities" type='button' onClick={(event) => { setInputLocationName('Dublin'); }}>Dublin
+                        </button> 
                     </div>
-                    <div className="popular-cities Dubai">
-                        <button className="button-cities">Dubai</button>
+                    <div className="popular-cities Dubaj">
+                         <button className="button-cities" type='button' onClick={(event) => { setInputLocationName('Dubaj'); }}>Dubaj
+                        </button> 
                     </div>
                 </div>
             </section></>

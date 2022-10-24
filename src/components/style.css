@@ -4,6 +4,9 @@
     font-size: 12;
     font-style: italic;
 }
+.hidden {
+    display: none;
+}
 
 header {
     text-transform: uppercase;
@@ -26,10 +29,13 @@ header a:hover {
    color: #FFFFFF;
 }
 
-header-2 {
-    color: rgb(12, 51, 51);
+.headerH2 {
+    text-transform: uppercase;
+    color: darkcyan;
     text-align: center;
     height: min-content;
+ font-weight: lighter;
+
 }
 
 
@@ -162,19 +168,27 @@ header-2 {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    border-radius: 20px;
     }
 
-.NewYork {
-    background-image: url(../imgSvg/NewYork.png);
-}
+
 .London {
-    background-image: url(../imgSvg/London.png);
+    background-image: url(../imgSvg/London.jpg);
 }
-.Dubai {
-    background-image: url(../imgSvg/Dubai.png);
+.Dubaj {
+    background-image: url(../imgSvg/Dubaj.jpg);
 }
 .Paris {
-    background-image: url(../imgSvg/Dubai.png);
+    background-image: url(../imgSvg/Parizh.jpg);
+}
+
+.Dublin{
+    background-image: url(../imgSvg/Dublin.jpg);
+
 }
 
 
