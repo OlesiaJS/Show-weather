@@ -9,12 +9,18 @@ function useWeather(defaultCity) {
     const [LocationTime, setLocationTime] = useState('');
     const [WeatherIcon, setWeatherIcon] = useState('./imgSvg/imgage-1.png');
     const [error, setError] = useState(false);
+    const [isLoading, setIsloading] = useState(true);
+
+
     useEffect(() => {
         fetch('https://api.weatherapi.com/v1/current.json?key=237b94cd56344d69b80133558221510&q=' + inputLocationName + '+"&aqi=no')
             .then(el => el.json())
             .then(data => {
                 if (data.error) {
                     console.log(data.error.message);
+                    setError(true);
+                    setIsloading(false);
+
                 } else {
                     setHumidity(data?.current?.humidity);
                     setTepmerature(data?.current?.temp_c);
@@ -23,6 +29,7 @@ function useWeather(defaultCity) {
                     setLocationTime(data?.location?.localtime);
                     setWeatherIcon(data?.current?.condition?.icon);
                     setError(false);
+                    setIsloading(false);
                 }
             });
 
@@ -38,6 +45,7 @@ function useWeather(defaultCity) {
         error,
         inputLocationName,
         setInputLocationName,
+        isLoading,
     };
 }
 

@@ -8,8 +8,8 @@ import useWeather from "../hooks/useWeather";
 
 function WeatherList() {
 
-const {humidity, tepmerature, condition, country, LocationTime, WeatherIcon, error, inputLocationName, setInputLocationName} = useWeather('Oslo');
-      
+const {humidity, tepmerature, condition, country, LocationTime, WeatherIcon, error, inputLocationName, setInputLocationName, isLoading} = useWeather('Oslo');
+
     return (
         <><section className="weather-search">
             <form className="search-field">
@@ -18,8 +18,9 @@ const {humidity, tepmerature, condition, country, LocationTime, WeatherIcon, err
                 }} />
             </form>
             <div className="weather-info">
+                {isLoading && <div style = {{textAlign: 'center'}}>Loading</div>}
+                {error && <div style = {{textAlign: 'center'}}>Oops, no data for this place</div>}
                 <div className="weather-info-temp">
-                    { error && <p>'Oops, no data for this place'</p>}
                     {!error && tepmerature && (
                          <>
                          <div className="weather-info-icon">
@@ -33,7 +34,7 @@ const {humidity, tepmerature, condition, country, LocationTime, WeatherIcon, err
                     )} 
                 </div>
                 <div className="weather-info-location">
-                    <p className="drizzle-type">{inputLocationName},{country}</p>
+                    <p className="drizzle-type">{inputLocationName} {country}</p>
                     <p className="drizzle-type">{LocationTime}</p>
                 </div>
 
