@@ -13,7 +13,7 @@ function useWeather(defaultCity) {
 
 
     useEffect(() => {
-        fetch('https://api.weatherapi.com/v1/current.json?key=237b94cd56344d69b80133558221510&q=' + inputLocationName + '+"&aqi=no')
+        fetch('https://api.weatherapi.com/v1/current.json?key=92482e5c02b048e3aea111506220911&q=' + inputLocationName + '&aqi=no')
             .then(el => el.json())
             .then(data => {
                 if (data.error) {
