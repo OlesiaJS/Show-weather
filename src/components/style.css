@@ -162,6 +162,7 @@ header a:hover {
 .popular-cities-list {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .popular-cities{
@@ -217,4 +218,26 @@ padding-right: 10px;
     text-align: center;
     color: #212121;
     font-size: 16px;
+}
+
+@media (max-width: 565px){
+.weather-info{
+    flex-direction: column;
+    height: 350px;
+    width: 280px;
+    align-items:stretch;
+    }
+    .weather-search {
+    height: 520px;
+    }
+    .wweather-info-location{
+    align-items: center;
+    }
+
+    .news-info {
+    flex-direction: column;
+    height: 350px;
+    width: 280px;
+    align-items: stretch;
+    }
 }
